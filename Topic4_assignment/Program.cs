@@ -24,6 +24,10 @@
             Console.WriteLine();
             Console.WriteLine();
             Part4();
+            Thread.Sleep(5000);
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
         }
 
         public static void Part1()
