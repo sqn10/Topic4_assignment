@@ -4,7 +4,7 @@ namespace Topic4_assignment
 {
     internal class Program
     {
-        public static string firstName;
+        private static string firstName;
         private static int age;
         static void Main(string[] args)
         {
@@ -24,6 +24,8 @@ namespace Topic4_assignment
 
             Part5();
             MethodSeperate(3, 1000);
+
+            Thread.Sleep(5000);
         }
 
         public static void Part1()
@@ -133,7 +135,7 @@ namespace Topic4_assignment
         public static void Part5()
         {
             string firstItem, secondItem;
-            double cost1, cost2;
+            double cost1, cost2, totalCost, discount, subtotal, tax, totalOwed;
 
             Typer("You're gonna buy two things today, " + firstName + "!");
 
@@ -156,12 +158,26 @@ namespace Topic4_assignment
             BlankLines(2);
 
             Typer("\u001b[1m    /***    SALES RECEIPT    ***\\    \u001b[0m"); Console.WriteLine();
-            Typer("                     Item 1...." +  firstItem); Console.WriteLine();
-            Typer("                     Cost...." + cost1.ToString("C")); Console.WriteLine();
-            Typer("                     Item 2...." + secondItem); Console.WriteLine();
-            Typer("                     Cost...." + cost2.ToString("C")); Console.WriteLine();
+            Typer("         Item 1...." +  firstItem); Console.WriteLine();
+            Typer("         Cost...." + cost1.ToString("C")); Console.WriteLine();
+            Typer("         Item 2...." + secondItem); Console.WriteLine();
+            Typer("         Cost...." + cost2.ToString("C")); Console.WriteLine();
 
-            Typer("                     =*=*=*=*=*=*=*=");
+            Typer("         =*=*=*=*=*=*=*="); Console.WriteLine();
+
+            totalCost = cost1 + cost2;
+            discount = totalCost * 0.20;
+            subtotal = totalCost - discount;
+            tax = subtotal * 0.13;
+            totalOwed = subtotal * 1.13;
+            Typer("         Total cost...." + totalCost.ToString("C")); Console.WriteLine();
+            Typer("         Discount...." + discount.ToString("C")); Console.WriteLine();
+            Typer("         Subtotal...." + subtotal.ToString("C")); Console.WriteLine();
+            Typer("         Tax...." + tax.ToString("C")); Console.WriteLine();
+
+            Typer("         =*=*=*=*=*=*=*="); Console.WriteLine();
+
+            Typer("         Total Owed...." + totalOwed.ToString("C")); Console.WriteLine();
         }
         public static void Typer(string text)
         {
