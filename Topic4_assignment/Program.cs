@@ -127,7 +127,7 @@ namespace Topic4_assignment
 
             Console.WriteLine();
 
-            answer = (num1 + num2 + num3) / 2;
+            answer = (num1 + num2 + num3) / 2.00;
 
             Typer(num1 + " + " + num2 + " + " + num3 + " \u00F7 2 = " + Math.Round(answer, 2));
         }
